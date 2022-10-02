@@ -18,3 +18,5 @@ The following need to be downloaded separately.
 1. Optionally, enable *ShowExpectedGuardian* and *ShowActualGuardian* to see the former in yellow and the latter in green.
 1. On your Quest device recreate your Guardian to match the expected shape.
 1. Test directly in the Unity Editor.
+
+![Example](https://github.com/cecarlsen/AlignQuestCameraRigWithKnownGuardian/blob/main/ReadmeImages/HotelRoomTest.jpg)
