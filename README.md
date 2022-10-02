@@ -1,6 +1,6 @@
 # Align Quest Camera Rig With Known Guardian
 
-This is a hack for Meta Quest that allows you to align your virtual environment (Unity world space) with a **site specific** space (physical space). The solution assumes that you know the expected shape of the Guardian at build time, and then it simply attempts to align the expected with the actual Guardian by translating and rotating the Camera Rig.
+This is a hack for Meta Quest that allows you to align your virtual environment (Unity world space) with a **site specific** physical space. The solution assumes that you know the expected shape of the Guardian at build time, and then it simply attempts to align the expected with the actual Guardian by translating and rotating the Camera Rig.
 
 Updated using Unity 2021.3.
 
