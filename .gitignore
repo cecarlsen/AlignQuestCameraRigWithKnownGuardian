@@ -26,7 +26,9 @@ sysinfo.txt
 # Carl Emil Carlsen
 # =========================
 /Assets/ThirdParty/
+/Assets/ThirdParty.meta
 /Assets/Temp/
+/Assets/Temp.meta
 
 # =========================
 # Operating System Files

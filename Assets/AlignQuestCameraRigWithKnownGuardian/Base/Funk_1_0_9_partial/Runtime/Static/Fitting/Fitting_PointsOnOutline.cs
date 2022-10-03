@@ -14,7 +14,7 @@ namespace  Funk
         /// Find the translation and rotation that minimizes the distance of a set of points to an outline without applying scaling.
         /// Angles in radians.
         /// </summary>
-        public static void PointsOnOutlineFixedScale( IList<Vector2> points, IList<Vector2> outline, out Vector2 translation, out float angle, float angularStep = Trigonometry.Tau / 360 )
+        public static void PointsOnOutlineFixedScale( IList<Vector2> points, IList<Vector2> outline, out Vector2 translation, out float angle, float angularStep = Trigonometry.Tau / 360, bool performPostAdjustment = false)
 		{
 			// Homebrewed algorithm, not an optimal solution.
 			// 1) Place the points and outline on top of each other using center of mass of the convex hulls. 
@@ -52,8 +52,23 @@ namespace  Funk
                 }
 			}
 
+			// Perform post translation adjustment.
+			Vector2 dir = Vector2.zero;
+			Matrix3x3 rotation = Matrix3x3.Rotate( angle );
+			if( performPostAdjustment ) {
+				foreach( Vector2 p in points ) {
+					Vector2 rp = rotation * p;
+					Vector2 cop = Analysis.ClosestPointOnOutline( rp, outline );
+					//Gizmos.DrawLine( cop, rp );
+					//Debug.Log( ( cop - p ).magnitude );
+					dir += cop - rp;
+				}
+				dir /= (float) points.Count;
+				dir = Matrix3x3.Rotate( -angle ) * dir;
+			}
+
             // Compensate for rotation around outline pivot.
-			translation = outlineCenter - pointsCenter;
+            translation = outlineCenter - pointsCenter + dir;
             translation -= outlineCenter - Matrix3x3.Rotate( -angle ) * outlineCenter;
 
             // Translate points and outline back to where they were.

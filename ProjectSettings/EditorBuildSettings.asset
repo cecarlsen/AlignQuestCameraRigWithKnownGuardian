@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/AlignQuestCameraRigWithKnownGuardian/Example/ExemplifyAlignQuestCameraRigWithKnownGuardian.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Temp/ProtoLab2.unity
+    guid: 94cf5d7b02c242b46b992a95c9f2a4d3
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5338a124d9044ca47a4890cb6c23532c, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fe81104f7bb350543933b0b374ec1ae2, type: 2}

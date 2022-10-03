@@ -244,10 +244,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomSeed: 12
   angularStep: 1
+  performPostAdjustment: 0
   outlinePointCount: 5
   perlinNoiseOffset: 1
   perlinNoiseFreq: 0.085
-  outlineOffset: {x: 2.44, y: 0}
+  outlineOffset: {x: 2.44, y: -0.11}
   pointsSubdivisionsPerSegment: 5
   pointsRandomOffset: 0.066
   pointsTranslation: {x: 1.63, y: 0}

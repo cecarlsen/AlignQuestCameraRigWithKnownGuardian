@@ -12,6 +12,7 @@ namespace Funk.Samples
 	{
 		public int randomSeed = 0;
 		[Range(0.1f,5f)] public float angularStep = 5;
+		public bool performPostAdjustment = false;
 
 		[Header("Source Outline")]
 		[Range(3,100)] public int outlinePointCount = 10;
@@ -42,10 +43,12 @@ namespace Funk.Samples
 			// Compute.
 			Vector2 translation;
 			float rotation;
-			Fitting.PointsOnOutlineFixedScale( points, outline, out translation, out rotation, angularStep * Mathf.Deg2Rad );
-			Matrix3x3 fittingTransform = Matrix3x3.Rotate( rotation ) * Matrix3x3.Translate( translation );
+			Fitting.PointsOnOutlineFixedScale( points, outline, out translation, out rotation, angularStep * Mathf.Deg2Rad, performPostAdjustment );
+            Matrix3x3 fittingTransform = Matrix3x3.Rotate( rotation ) * Matrix3x3.Translate( translation );
+            //Matrix3x3 fittingTransform = Matrix3x3.Translate( translation ) * Matrix3x3.Rotate( rotation );
             List<Vector2> fittedPoints = new List<Vector2>( points.Count );
 			foreach( Vector2 p in points ) fittedPoints.Add( fittingTransform * p );
+            //foreach( Vector2 p in points ) fittedPoints.Add( Matrix3x3.Rotate( rotation ) * ( Matrix3x3.Translate( translation ) * p ) );
 
             // Draw.
             Gizmos.color = Color.white;

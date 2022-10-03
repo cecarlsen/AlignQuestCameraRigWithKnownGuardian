@@ -75,12 +75,14 @@ public class AlignQuestCameraRigWithKnownGuardian : MonoBehaviour
 		Vector2[] expectedPoints2D = Vector3XZToVector2( _expectedPoints );
 		Vector2 translation;
 		float rotation;
-		Fitting.PointsOnOutlineFixedScale( guardianPoints2D, expectedPoints2D, out translation, out rotation, Mathf.PI * 2 / 360f );
+		Fitting.PointsOnOutlineFixedScale( guardianPoints2D, expectedPoints2D, out translation, out rotation, Mathf.PI * 2 / 360f, performPostAdjustment: true );
 
 		// Apply transformation.
 		Transform camRigTransform = _cameraRig.transform;
 		camRigTransform.position = new Vector3( translation.x, camRigTransform.position.y, translation.y );
-		camRigTransform.rotation = Quaternion.Euler( 0, -rotation * Mathf.Rad2Deg, 0 );
+		camRigTransform.RotateAround( Vector3.zero, Vector2.up, -rotation * Mathf.Rad2Deg );
+
+        //camRigTransform.rotation = Quaternion.Euler( 0, -rotation * Mathf.Rad2Deg, 0 );
 
         _aligned = true;
 	}
