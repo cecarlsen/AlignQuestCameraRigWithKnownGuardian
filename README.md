@@ -19,6 +19,6 @@ The following need to be imported separately.
 1. On your Quest device, recreate your Guardian to match the expected shape. The shape must not have rotational symmetry.
 1. Test directly in the Unity Editor.
 
-*Expected Guardian (yellow) vs Actual Guardian (green). As you can see the alignment is not perfect, but good enough for some cases.*
-
 ![Example](https://github.com/cecarlsen/AlignQuestCameraRigWithKnownGuardian/blob/main/ReadmeImages/HotelRoomTest.jpg)
+
+*Expected Guardian (yellow) vs Actual Guardian (green). As you can see the alignment is not perfect, but good enough for some cases.*
