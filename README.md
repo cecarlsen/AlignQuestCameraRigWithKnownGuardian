@@ -21,4 +21,4 @@ The following need to be imported separately.
 
 ![Example](https://github.com/cecarlsen/AlignQuestCameraRigWithKnownGuardian/blob/main/ReadmeImages/HotelRoomTest.jpg)
 
-*Expected Guardian (yellow) vs Actual Guardian (green). As you can see the alignment is not perfect, but good enough for some cases.*
+*Expected Guardian (yellow) vs Actual Guardian (green). As you can see the alignment is not perfect, but good enough for some cases. The hotel room model was created using [Scaniverse](https://apps.apple.com/de/app/scaniverse-lidar-3d-scanner/id1541433223).*
