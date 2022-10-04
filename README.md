@@ -4,6 +4,10 @@ This is a hack for Meta Quest that allows you to align your virtual environment 
 
 Updated using Unity 2021.3.
 
+![Example](https://github.com/cecarlsen/AlignQuestCameraRigWithKnownGuardian/blob/main/ReadmeImages/HotelRoomTest.jpg)
+
+*Expected Guardian (yellow) vs Actual Guardian (green). As you can see the alignment is not perfect, but good enough for some cases. The hotel room model was created using [Scaniverse](https://apps.apple.com/de/app/scaniverse-lidar-3d-scanner/id1541433223).*
+
 ### Limitations
 - Not compatible with OpenXR backend. At the time of writing, the only way to access the Guardian bounds points is to disable the OpenXR backend and rely on Legacy LibOVR+VRAPI. See [here](https://forum.unity.com/threads/can-we-reuse-user-s-vr-boundaries.818331/#post-8479355). Unfortunately, only OpenXR supports see-through AR on Quest.
 - Guardian cannot have rotational symmetry.
@@ -18,7 +22,3 @@ The following need to be imported separately.
 1. Either measure or 3D-scan your room floor and bring it into your scene. Add transforms where the corners of the Guardian is expected to be. Assign them to the field *ExpectedGuardianTransforms*.
 1. On your Quest device, recreate your Guardian to match the expected shape. The shape must not have rotational symmetry.
 1. Test directly in the Unity Editor.
-
-![Example](https://github.com/cecarlsen/AlignQuestCameraRigWithKnownGuardian/blob/main/ReadmeImages/HotelRoomTest.jpg)
-
-*Expected Guardian (yellow) vs Actual Guardian (green). As you can see the alignment is not perfect, but good enough for some cases. The hotel room model was created using [Scaniverse](https://apps.apple.com/de/app/scaniverse-lidar-3d-scanner/id1541433223).*
